@@ -171,9 +171,7 @@ export const actions = {
 
   async getCompany({ commit, dispatch }, url) {
     const result = await dispatch("makeGET", url);
-    console.log(result, result.response);
-
-    // commit("setCompany", result.data);
+    commit("setCompany", result.data);
   },
 
   async getPlans({ commit, dispatch }, url) {
@@ -254,7 +252,7 @@ export const actions = {
   },
 
   async initializeDetails({ commit, dispatch }) {
-    // await dispatch("getReviews", `/reviews/?limit=3&page=1&sort=-time`);
+    await dispatch("getReviews", `/reviews/?limit=3&page=1&sort=-time`);
     await dispatch("getCompany", `/company`);
     // await dispatch("getManagers", `/manager/?limit=10&page=1`);
     // await dispatch("getWallets", `/wallets/?limit=10&page=1`);
@@ -262,27 +260,27 @@ export const actions = {
     // await dispatch("getReferrals", `/referrals/?limit=10&page=1&sort=-time`);
     // await dispatch("getFaq", `/faq/?limit=10&page=1&sort=-time`);
     // await dispatch("getTerms", `/terms/?limit=10&page=1&sort=-time`);
-    // await dispatch("getBanners", `/banners/?limit=10&page=1&sort=-time`);
+    await dispatch("getBanners", `/banners/?limit=10&page=1&sort=-time`);
     // await dispatch(
     //   "getPartnership",
     //   `/blog/?limit=4&page=1&sort=time&category=Partnership&status=1`
     // );
-    // await dispatch(
-    //   "getTutorials",
-    //   `/blog/?limit=4&page=1&sort=time&category=Tutorial&status=1`
-    // );
-    // await dispatch(
-    //   "getBlogs",
-    //   `/blog/?limit=30&page=1&sort=-time&blogType=Blog&status=1`
-    // );
-    // await dispatch(
-    //   "getCompetitions",
-    //   `/competitions/?limit=10&page=1&sort=-time`
-    // );
-    // await dispatch(
-    //   "getCompetitors",
-    //   `/competitions/competitors/?limit=10&page=1&sort=-time`
-    // );
+    await dispatch(
+      "getTutorials",
+      `/blog/?limit=4&page=1&sort=time&category=Tutorial&status=1`
+    );
+    await dispatch(
+      "getBlogs",
+      `/blog/?limit=30&page=1&sort=-time&blogType=Blog&status=1`
+    );
+    await dispatch(
+      "getCompetitions",
+      `/competitions/?limit=10&page=1&sort=-time`
+    );
+    await dispatch(
+      "getCompetitors",
+      `/competitions/competitors/?limit=10&page=1&sort=-time`
+    );
     // await dispatch(
     //   "getHistory",
     //   `/transactions/?limit=10&page=1&status=1&sort=-time`
